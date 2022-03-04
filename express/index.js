@@ -2,11 +2,11 @@ const express = require("express"); // Importando o express
 const app = express(); // Iniciando o express
 
 app.get("/", function (req, res) {
-    res.send("Bem vindo ao guia do programador");
+    res.send("<h1>Bem vindo ao guia do programador</h1>");
 });
 
 app.get("/blog", function (req, res) {
-    res.send("Bem vindo ao meu blog!")
+    res.send("<h3>Bem vindo ao meu blog!: www.guiadoprogramador.com.br<h3>")
 })
 
 app.get("/canal/youtube", function (req, res) {
