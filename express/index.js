@@ -5,12 +5,27 @@ app.get("/", function (req, res) {
     res.send("<h1>Bem vindo ao guia do programador</h1>");
 });
 
-app.get("/blog", function (req, res) {
-    res.send("<h3>Bem vindo ao meu blog!: www.guiadoprogramador.com.br<h3>")
+app.get("/blog/:artigo?", function (req, res) {
+
+    var artigo = req.params.artigo
+
+    if (artigo) {
+        res.send("<h2>Artigo: " + artigo + " </h2>");
+    } else {
+        res.send("<h3>Bem vindo ao meu blog!: www.guiadoprogramador.com.br<h3>");
+    }
 })
 
 app.get("/canal/youtube", function (req, res) {
     res.send("<h1>Bem vindo ao meu canal!</h1>")
+})
+
+app.get("/ola/:nome/:empresa", function (req, res) {
+    // REQ => DADOS ENVIADOS PELO USUÁRIO
+    // RES => RESPOSTA QUE VAI ENVIADA PARA o USUÁRIO
+    var nome = req.params.nome;
+    var empresa = req.params.empresa;
+    res.send("<h1>Oi " + nome + " do " + empresa + " </h1>")
 })
 
 app.listen(4000, function (erro) {
